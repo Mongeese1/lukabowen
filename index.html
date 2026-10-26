@@ -39,11 +39,20 @@
   p { margin: 0 0 14px; }
 
   .rows { list-style: none; margin: 0; padding: 0; }
-  .rows li { display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; padding: 16px 0; border-bottom: 1px solid var(--line); transition: opacity .25s; }
-  .rows:hover li:not(:hover) { opacity: .35; }
+  .rows > li { border-bottom: 1px solid var(--line); transition: opacity .25s; }
+  .rows:hover > li:not(:hover) { opacity: .35; }
+  summary { display: grid; grid-template-columns: 1fr auto 20px; gap: 2px 16px; padding: 16px 0; cursor: pointer; list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; grid-row: 1; grid-column: 3; text-align: center; color: var(--muted); transition: transform .3s; }
+  details[open] summary::after { transform: rotate(45deg); }
   .rows b { font-weight: 500; }
   .rows .when { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
   .rows .desc { grid-column: 1 / -1; color: var(--muted); font-size: 14px; }
+  .more { margin: -4px 0 18px; padding-left: 18px; font-size: 14px; }
+  .more li { margin-bottom: 6px; }
+  .more li::marker { color: var(--yellow); }
+  details[open] .more { animation: open .4s cubic-bezier(.2, .8, .2, 1); }
+  @keyframes open { from { opacity: 0; transform: translateY(-6px); } }
 
   .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .card { position: relative; padding: 20px; border: 1px solid var(--line); border-radius: 14px; background: #fff; overflow: hidden; transition: transform .35s cubic-bezier(.2, .8, .2, 1), box-shadow .35s, opacity .25s; }
@@ -61,8 +70,9 @@
   a:hover { background-size: 100% 100%; }
   .links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 
-  .reveal { opacity: 0; transform: translateY(24px); filter: blur(6px); transition: opacity .8s ease, transform .8s cubic-bezier(.2, .8, .2, 1), filter .8s ease; transition-delay: calc(var(--i, 0) * 80ms); }
-  .reveal.in { opacity: 1; transform: none; filter: none; }
+  .reveal { opacity: 0; }
+  .reveal.in { opacity: 1; animation: rise .7s cubic-bezier(.2, .8, .2, 1) backwards; animation-delay: calc(var(--i, 0) * 70ms); }
+  @keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
 
   .word { display: inline-block; opacity: 0; filter: blur(8px); transform: translateY(10px); animation: word .7s cubic-bezier(.2, .8, .2, 1) forwards; animation-delay: calc(var(--i) * 60ms + 200ms); }
   @keyframes word { to { opacity: 1; filter: none; transform: none; } }
@@ -101,9 +111,27 @@
   <section class="reveal">
     <h2>Work</h2>
     <ul class="rows">
-      <li><b>AI Specialist, SUEZ Consulting</b><span class="when">2024 &ndash; now</span><span class="desc">RAG on Azure, internal web apps, computer vision, GPT workspace and a monthly AI newsletter for 1,000+ staff.</span></li>
-      <li><b>Junior IT Support, TMC COMP</b><span class="when">2022 &ndash; 2023</span><span class="desc">Servers, client machines, and Python scripts to automate installs.</span></li>
-      <li><b>BSc Data Science &amp; Informatics, Maastricht</b><span class="when">2019 &ndash; 2023</span><span class="desc">Graduated with honours.</span></li>
+      <li><details><summary><b>AI Specialist, SUEZ Consulting</b><span class="when">2024 &ndash; now</span><span class="desc">RAG on Azure, internal web apps, computer vision, and AI enablement for 1,000+ staff.</span></summary>
+        <ul class="more">
+          <li><strong>Document ingestion / RAG:</strong> production pipeline that splits bid documents with Azure Document Intelligence, describes images and tables with Azure OpenAI, and indexes them in Azure AI Search, with an evaluation front end.</li>
+          <li><strong>TimeHub:</strong> timesheets and approvals for the international directorate (Flask, MySQL, Microsoft SSO), with multi-approver workflow, leave, holidays and workload reporting.</li>
+          <li><strong>Hub360:</strong> bids and proposals platform (Angular, Node.js, Azure Blob Storage) covering offers, clients, partners and framework contracts.</li>
+          <li><strong>Computer vision:</strong> local pipeline that irreversibly anonymises licence plates in motorway survey video; road-sign detection and mapping in QGIS.</li>
+          <li><strong>Digitalisation:</strong> other internal web apps, such as bank guarantee tracking.</li>
+          <li><strong>AI enablement and communications:</strong> company GPT workspace and custom GPTs, and a monthly AI newsletter for 1,000+ staff in 30+ countries.</li>
+        </ul></details></li>
+      <li><details><summary><b>Junior IT Support, TMC COMP</b><span class="when">2022 &ndash; 2023</span><span class="desc">Servers, client machines, and Python automation.</span></summary>
+        <ul class="more">
+          <li>Built computers and set up servers for clients.</li>
+          <li>Wrote Python scripts to automate software setup and installation.</li>
+          <li>Maintained servers and supported clients and colleagues, on site and remotely.</li>
+        </ul></details></li>
+      <li><details><summary><b>BSc Data Science &amp; Informatics, Maastricht</b><span class="when">2019 &ndash; 2023</span><span class="desc">Graduated with honours.</span></summary>
+        <ul class="more">
+          <li>Thesis: ML for recovering images distorted by gravitational lensing.</li>
+          <li>Kaggle cassava leaf disease detection with Keras.</li>
+          <li>CERN collaboration on pion particle detection; quantum computing demo later used in a research paper.</li>
+        </ul></details></li>
     </ul>
   </section>
 
