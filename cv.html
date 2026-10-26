@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Luka Bowen - CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 14mm 16mm; }
+  body { font: 10pt/1.45 Inter, "Segoe UI", Arial, sans-serif; color: #1c1a14; max-width: 178mm; margin: 0 auto; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  h1 { font: 400 28pt/1 "Instrument Serif", Georgia, serif; margin: 0; }
+  .sub { font: italic 13pt "Instrument Serif", Georgia, serif; margin: 4px 0 6px; }
+  .contact { font-size: 9pt; color: #77736a; }
+  .contact a { color: inherit; text-decoration: none; }
+  h2 { font-size: 9pt; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; display: flex; align-items: center; gap: 8px; margin: 14px 0 6px; }
+  h2::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #ffd60a; }
+  h2::after { content: ""; flex: 1; height: 1px; background: #ebe7da; }
+  h3 { font-size: 10pt; font-weight: 600; margin: 6px 0 2px; display: flex; justify-content: space-between; }
+  h3 span { font-weight: normal; color: #77736a; }
+  mark { background: linear-gradient(#ffd60a, #ffd60a) 0 85% / 100% 40% no-repeat; color: inherit; }
+  p { margin: 0 0 4px; }
+  ul { margin: 2px 0 6px; padding-left: 16px; }
+  li { margin-bottom: 3px; }
+</style>
+</head>
+<body>
+
+<h1>Luka Bowen</h1>
+<p class="sub">Data Scientist &middot; Computer Vision and Applied AI</p>
+<p class="contact">
+  <a href="mailto:lukabowen32@gmail.com">lukabowen32@gmail.com</a> &middot; +32 496 98 36 18 &middot; Antwerp &middot;
+  <a href="https://www.linkedin.com/in/luka-bowen-902178221">linkedin.com/in/luka-bowen-902178221</a>
+</p>
+
+<h2>Profile</h2>
+<p>AI specialist at SUEZ Consulting since February 2024. I design and ship <mark>production AI and internal web applications</mark> that consultants use every day, from document retrieval and RAG to computer vision on video, and help colleagues adopt AI tools across the company.</p>
+
+<h2>Experience</h2>
+<h3>AI Specialist, SUEZ Consulting, Belgrade <span>Feb 2024 &ndash; Present</span></h3>
+<ul>
+  <li><strong>Document ingestion / RAG:</strong> production pipeline that splits bid documents with Azure Document Intelligence, describes images and tables with Azure OpenAI, and indexes them in Azure AI Search, with an evaluation front end for testing retrieval.</li>
+  <li><strong>TimeHub:</strong> timesheet and approval application for the international directorate (Flask, MySQL, Microsoft SSO), with multi-approver workflow, leave and holiday management, and workload reporting.</li>
+  <li><strong>Hub360:</strong> bids and proposals platform (Angular, Node.js, Azure Blob Storage) covering offers, clients, partners and framework contracts, with AI-assisted features.</li>
+  <li><strong>Computer vision:</strong> local pipeline that irreversibly anonymises licence plates in motorway survey video (fine-tuned detector, tiled inference, frame-to-frame tracking); road-sign detection and mapping along the road in QGIS.</li>
+  <li><strong>Digitalisation:</strong> other internal web apps, such as bank guarantee tracking.</li>
+  <li><strong>AI enablement and communications:</strong> administer the company GPT workspace and custom GPTs, and write a monthly AI newsletter for 1,000+ SUEZ Consulting staff in 30+ countries.</li>
+</ul>
+<h3>Junior IT Support, TMC COMP, Belgrade <span>May 2022 &ndash; May 2023</span></h3>
+<ul>
+  <li>Set up servers and client machines; automated software installation with Python scripts.</li>
+</ul>
+
+<h2>Education</h2>
+<h3>BSc Data Science and Informatics, Maastricht University <span>2019 &ndash; 2023</span></h3>
+<p>Graduated with honours. Image machine learning (cassava disease detection, Kaggle); thesis on recovering images distorted by gravitational lensing with ML.</p>
+
+<h2>Skills</h2>
+<p>Python, computer vision, video processing, model fine-tuning, Flask, JavaScript, SQL, Azure (App Service, Document Intelligence, AI Search, OpenAI).</p>
+
+</body>
+</html>
