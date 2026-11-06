@@ -195,8 +195,8 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   const det = document.getElementById('det'), tag = det.firstChild;
-  const targets = '.card, summary, .lead, .links a, .logo, #about p';
-  const labels = { card: 'project', summary: 'role', lead: 'headline', a: 'link', logo: 'luka', p: 'about' };
+  const targets = '.card, summary, .lead, .links a, .logo, #about';
+  const labels = { card: 'project', summary: 'role', lead: 'headline', a: 'link', logo: 'luka', section: 'about' };
   addEventListener('pointermove', e => {
     const t = e.target.closest(targets);
     det.classList.add('on');
