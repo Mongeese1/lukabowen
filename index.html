@@ -120,7 +120,7 @@
   <div class="status">Currently at SUEZ Consulting</div>
   <h2 class="lead" id="lead">I build AI that <em>people actually use</em> &mdash; from document search to computer vision on video.</h2>
 
-  <section class="reveal">
+  <section class="reveal" id="about">
     <h2>About</h2>
     <p>Since 2024 I've been an AI developer at SUEZ Consulting, where I design and ship tools consultants use every day: <mark>retrieval pipelines over company documents</mark>, <mark>computer vision on survey video</mark>, and web applications for timesheets, bids and finance.</p>
     <p>Before that I studied Data Science and Informatics at Maastricht University: image models, a thesis on gravitational lensing, and a collaboration with CERN.</p>
@@ -195,8 +195,8 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   const det = document.getElementById('det'), tag = det.firstChild;
-  const targets = '.card, summary, .lead, .links a, .logo';
-  const labels = { card: 'project', summary: 'role', lead: 'headline', a: 'link', logo: 'luka' };
+  const targets = '.card, summary, .lead, .links a, .logo, #about p';
+  const labels = { card: 'project', summary: 'role', lead: 'headline', a: 'link', logo: 'luka', p: 'about' };
   addEventListener('pointermove', e => {
     const t = e.target.closest(targets);
     det.classList.add('on');
